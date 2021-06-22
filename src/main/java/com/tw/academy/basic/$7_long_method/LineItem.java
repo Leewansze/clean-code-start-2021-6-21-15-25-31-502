@@ -27,4 +27,11 @@ public class LineItem {
     double totalAmount() {
         return price * quantity;
     }
+
+    public String generateLineItemList() {
+		return this.description + '\t'
+				+ this.price + '\t'
+				+ this.quantity + '\t'
+				+ this.totalAmount() + '\n';
+	}
 }
