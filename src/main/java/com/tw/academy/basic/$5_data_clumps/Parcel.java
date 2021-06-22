@@ -13,16 +13,15 @@ public class Parcel {
     private String senderAddress;
 
     public Parcel(String size, Double weight,
-                  String receiverName, String receiverPhoneNumber, String receiverAddress,
-                  String senderName, String senderPhoneNumber, String senderAddress) {
+                  User received, User sender) {
         this.size = size;
         this.weight = weight;
-        this.receiverName = receiverName;
-        this.receiverPhoneNumber = receiverPhoneNumber;
-        this.receiverAddress = receiverAddress;
-        this.senderName = senderName;
-        this.senderPhoneNumber = senderPhoneNumber;
-        this.senderAddress = senderAddress;
+        this.receiverName = received.getName();
+        this.receiverPhoneNumber = received.getPhoneNumber();
+        this.receiverAddress = received.getAddress();
+        this.senderName = sender.getName();
+        this.senderPhoneNumber = sender.getPhoneNumber();
+        this.senderAddress = sender.getAddress();
     }
 
     public String confirmReceiver(){
