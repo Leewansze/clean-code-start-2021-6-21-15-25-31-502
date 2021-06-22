@@ -13,6 +13,7 @@ public class OrderReceipt {
     public static final String total_amount_printer = "Total Amount";
     public static final char spacing = '\t';
     public static final char line_break = '\n';
+    public static final String printer_orders_header = "======Printing Orders======\n";
 
     private Order order;
 
@@ -30,7 +31,7 @@ public class OrderReceipt {
         StringBuilder output = new StringBuilder();
 
         // print headers
-        output.append("======Printing Orders======\n");
+        output.append(printer_orders_header);
 
         // print date, bill no, customer name
         output.append(order.getCustomerName());
