@@ -30,7 +30,7 @@ public class OrderReceipt {
         StringBuilder output = new StringBuilder();
 
         // print headers
-        output.append(printer_orders_header);
+        appendCustomerInfo(output);
 
         // print date, bill no, customer name
         output.append(order.getCustomerName());
@@ -56,5 +56,9 @@ public class OrderReceipt {
         // print total amount
         output.append(total_amount_printer).append(spacing).append(totalAmount);
         return output.toString();
+    }
+
+    private void appendCustomerInfo(StringBuilder builder) {
+        builder.append(printer_orders_header);
     }
 }
