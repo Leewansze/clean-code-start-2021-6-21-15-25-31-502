@@ -8,7 +8,6 @@ package com.tw.academy.basic.$7_long_method;
  * @since   2018-1-1
  */
 public class OrderReceipt {
-    public static final double sales_tax_rate_10_percent = .10;
     public static final String sales_tax_printer = "Sales Tax";
     public static final String total_amount_printer = "Total Amount";
     public static final char spacing = '\t';
@@ -37,7 +36,7 @@ public class OrderReceipt {
             output.append(lineItem.generateLineItemList());
 
             // calculate sales tax @ rate of 10%
-            double salesTax = lineItem.totalAmount() * sales_tax_rate_10_percent;
+            double salesTax = lineItem.getSalesTax(lineItem);
             totalSalesTax += salesTax;
 
             // calculate total amount of lineItem = price * quantity + 10 % sales tax
