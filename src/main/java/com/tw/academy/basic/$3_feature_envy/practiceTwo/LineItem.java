@@ -12,11 +12,7 @@ public class LineItem {
 		this.quantity = quantity;
 	}
 
-	public double getPrice() {
-		return price;
-	}
-
-	public int getQuantity() {
-		return quantity;
+	public double getSubPrice() {
+		return price * quantity;
 	}
 }
