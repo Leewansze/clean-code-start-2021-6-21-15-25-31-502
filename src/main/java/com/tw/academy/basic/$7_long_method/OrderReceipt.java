@@ -50,11 +50,14 @@ public class OrderReceipt {
         }
 
         // prints the state tax
-        output.append(sales_tax_printer).append(spacing).append(totalSalesTax);
+        appendTaxAndTotalAmount(output, totalSalesTax, totalAmount);
+        return output.toString();
+    }
 
+    private void appendTaxAndTotalAmount(StringBuilder output, double totalSalesTax, double totalAmount) {
+        output.append(sales_tax_printer).append(spacing).append(totalSalesTax);
         // print total amount
         output.append(total_amount_printer).append(spacing).append(totalAmount);
-        return output.toString();
     }
 
     private void appendOrderItems(StringBuilder builder) {
