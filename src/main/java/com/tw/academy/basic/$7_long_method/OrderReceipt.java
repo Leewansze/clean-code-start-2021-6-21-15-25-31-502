@@ -33,8 +33,7 @@ public class OrderReceipt {
         appendCustomerInfo(output);
 
         // print date, bill no, customer name
-        output.append(order.getCustomerName());
-        output.append(order.getCustomerAddress());
+        appendOrderItems(output);
 
         // prints lineItems
         double totalSalesTax = 0d;
@@ -56,6 +55,11 @@ public class OrderReceipt {
         // print total amount
         output.append(total_amount_printer).append(spacing).append(totalAmount);
         return output.toString();
+    }
+
+    private void appendOrderItems(StringBuilder builder) {
+        builder.append(order.getCustomerName());
+        builder.append(order.getCustomerAddress());
     }
 
     private void appendCustomerInfo(StringBuilder builder) {
