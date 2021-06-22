@@ -12,7 +12,6 @@ public class OrderReceipt {
     public static final String sales_tax_printer = "Sales Tax";
     public static final String total_amount_printer = "Total Amount";
     public static final char spacing = '\t';
-    public static final char line_break = '\n';
     public static final String printer_orders_header = "======Printing Orders======\n";
 
     private final Order order;
@@ -28,11 +27,7 @@ public class OrderReceipt {
 
     public String printReceipt() {
         StringBuilder output = new StringBuilder();
-
-        // print headers
         appendReceiptHeader(output);
-
-        // print date, bill no, customer name
         appendCustomerInfo(output);
 
         // prints lineItems
@@ -49,14 +44,12 @@ public class OrderReceipt {
             totalAmount += lineItem.totalAmount() + salesTax;
         }
 
-        // prints the state tax
         appendTaxAndTotalAmount(output, totalSalesTax, totalAmount);
         return output.toString();
     }
 
     private void appendTaxAndTotalAmount(StringBuilder output, double totalSalesTax, double totalAmount) {
         output.append(sales_tax_printer).append(spacing).append(totalSalesTax);
-        // print total amount
         output.append(total_amount_printer).append(spacing).append(totalAmount);
     }
 
