@@ -1,17 +1,22 @@
 package com.tw.academy.basic.$3_feature_envy.practiceOne;
 
 public class Phone {
-    private final String unformattedNumber;
+//    private final String unformattedNumber;
+    private String areaCode;
+    private String prefix;
+    private String number;
+
     public Phone(String unformattedNumber) {
-        this.unformattedNumber = unformattedNumber;
+        this.areaCode = unformattedNumber.substring(0,3);
+        this.prefix = unformattedNumber.substring(3,6);
+        this.number = unformattedNumber.substring(6,10);
     }
-    public String getAreaCode() {
-        return unformattedNumber.substring(0,3);
-    }
-    public String getPrefix() {
-        return unformattedNumber.substring(3,6);
-    }
-    public String getNumber() {
-        return unformattedNumber.substring(6,10);
+
+
+    public String getPhoneNumber() {
+        return "(" +
+                areaCode + ") " +
+                prefix + "-" +
+                number;
     }
 }
