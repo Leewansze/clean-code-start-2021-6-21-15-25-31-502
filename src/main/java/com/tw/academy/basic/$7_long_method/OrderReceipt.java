@@ -15,7 +15,7 @@ public class OrderReceipt {
     public static final char line_break = '\n';
     public static final String printer_orders_header = "======Printing Orders======\n";
 
-    private Order order;
+    private final Order order;
 
     public OrderReceipt(Order order) {
         this.order = order;
