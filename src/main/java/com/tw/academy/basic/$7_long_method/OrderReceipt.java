@@ -30,10 +30,10 @@ public class OrderReceipt {
         StringBuilder output = new StringBuilder();
 
         // print headers
-        appendCustomerInfo(output);
+        appendReceiptHeader(output);
 
         // print date, bill no, customer name
-        appendOrderItems(output);
+        appendCustomerInfo(output);
 
         // prints lineItems
         double totalSalesTax = 0d;
@@ -60,12 +60,12 @@ public class OrderReceipt {
         output.append(total_amount_printer).append(spacing).append(totalAmount);
     }
 
-    private void appendOrderItems(StringBuilder builder) {
+    private void appendCustomerInfo(StringBuilder builder) {
         builder.append(order.getCustomerName());
         builder.append(order.getCustomerAddress());
     }
 
-    private void appendCustomerInfo(StringBuilder builder) {
+    private void appendReceiptHeader(StringBuilder builder) {
         builder.append(printer_orders_header);
     }
 }
